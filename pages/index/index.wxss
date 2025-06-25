@@ -1,0 +1,55 @@
+/**index.wxss**/
+.container {
+  padding: 20rpx;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+.picker {
+  padding: 10rpx;
+  border: 1rpx solid #dddddd;
+  border-radius: 5rpx;
+}
+.calendar {
+  border: 1rpx solid #dddddd;
+  border-radius: 10rpx;
+}
+.weekdays {
+  display: flex;
+  background-color: #f0f0f0;
+}
+.weekday {
+  flex: 1;
+  text-align: center;
+  padding: 10rpx;
+}
+.days {
+  display: flex;
+  flex-wrap: wrap;
+}
+.day {
+  width: 14.28%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #eeeeee;
+}
+.schedule {
+  font-size: 24rpx;
+}
+.onDuty {
+  background-color: #ffcccb;
+}
+.offDuty {
+  background-color: #90ee90;
+}
+.halfDay {
+  background-color: #ffffcc;
+}
+.holiday {
+  background-color: #ff69b4;
+}

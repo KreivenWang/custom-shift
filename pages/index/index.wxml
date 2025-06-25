@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+    <picker mode="selector" range="2025,2026,2027,2028,2029" value="{{year-2025}}" bindchange="changeYear">
+      <view class="picker">年份：{{year}}</view>
+    </picker>
+    <picker mode="selector" range="1,2,3,4,5,6,7,8,9,10,11,12" value="{{month-1}}" bindchange="changeMonth">
+      <view class="picker">月份：{{month}}</view>
+    </picker>
+  </view>
+  <view class="calendar">
+    <view class="weekdays">
+      <view wx:for="{{weekdays}}" wx:key="*this" class="weekday">{{item}}</view>
+    </view>
+    <view class="days">
+      <view wx:for="{{days}}" wx:key="*this" class="day {{item.schedule === '值' ? 'onDuty' : item.schedule === '休' ? 'offDuty' : item.schedule === '中' ? 'halfDay' : 'holiday'}}">
+        {{item.day}}
+        <view class="schedule">{{item.schedule}}</view>
+      </view>
+    </view>
+  </view>
+</view>
