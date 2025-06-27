@@ -16,26 +16,26 @@ const MonthNavigation: React.FC<MonthNavigationProps> = ({
   onNextMonth
 }) => {
   return (
-    <View className="flex items-center justify-between bg-white rounded-2xl shadow-lg m-4 p-4">
-      <Button
+    <View className="flex items-center justify-between rounded-2xl m-4 py-4">
+      <View
         onClick={onPrevMonth}
-        className="flex items-center justify-center w-12 h-12 text-gray-600 hover:text-gray-800 transition-colors duration-200 border-none"
-         >
-        ◀
-      </Button>
+        className="w-12 h-12 flex items-center justify-center bg-white rounded-2xl shadow-md hover:shadow-xl transition-all cursor-pointer"
+      >
+        <Text className='text-2xl'>&lt;</Text>
+      </View>
 
       <View className="text-center">
-        <Text className="text-xl font-bold text-gray-800">
+        <Text className="text-2xl font-bold text-gray-800">
           {year}年 {getMonthName(month)}
         </Text>
       </View>
 
-      <Button
+      <View
         onClick={onNextMonth}
-        className="flex items-center justify-center w-12 h-12 text-gray-600 hover:text-gray-800 transition-colors duration-200 border-none"
+        className="w-12 h-12 flex items-center justify-center bg-white rounded-2xl shadow-md hover:shadow-xl transition-all cursor-pointer"
       >
-        ▶
-      </Button>
+        <Text className='text-2xl'>&gt;</Text>
+      </View>
     </View>
   );
 };
