@@ -1,6 +1,6 @@
 import React from 'react';
 import { getMonthName } from '../utils/calendarUtils';
-import { View, Text } from '@tarojs/components';
+import { View, Text, Button } from '@tarojs/components';
 
 interface MonthNavigationProps {
   year: number;
@@ -16,13 +16,13 @@ const MonthNavigation: React.FC<MonthNavigationProps> = ({
   onNextMonth
 }) => {
   return (
-    <View className="flex items-center justify-between bg-white rounded-2xl shadow-lg mx-4 mb-6 p-4">
-      <button
+    <View className="flex items-center justify-between bg-white rounded-2xl shadow-lg m-4 p-4">
+      <Button
         onClick={onPrevMonth}
-        className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 hover:bg-gray-100 transition-colors duration-200 active:scale-95"
-      >
-        <View className="w-6 h-6 text-gray-600" />
-      </button>
+        className="flex items-center justify-center w-12 h-12 text-gray-600 hover:text-gray-800 transition-colors duration-200 border-none"
+         >
+        ◀
+      </Button>
 
       <View className="text-center">
         <Text className="text-xl font-bold text-gray-800">
@@ -30,12 +30,12 @@ const MonthNavigation: React.FC<MonthNavigationProps> = ({
         </Text>
       </View>
 
-      <button
+      <Button
         onClick={onNextMonth}
-        className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 hover:bg-gray-100 transition-colors duration-200 active:scale-95"
+        className="flex items-center justify-center w-12 h-12 text-gray-600 hover:text-gray-800 transition-colors duration-200 border-none"
       >
-        <View className="w-6 h-6 text-gray-600" />
-      </button>
+        ▶
+      </Button>
     </View>
   );
 };

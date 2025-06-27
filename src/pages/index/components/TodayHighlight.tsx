@@ -1,9 +1,9 @@
 import React from 'react';
 // import { Calendar } from 'lucide-react';
-import { ScheduleDay } from '../types/schedule';
-import { getShiftColor } from '../utils/scheduleCalculator';
-import { getWeekdayName } from '../utils/calendarUtils';
 import { View } from '@tarojs/components';
+import { ScheduleDay, ShiftType } from '../types/schedule';
+import { getWeekdayName } from '../utils/calendarUtils';
+import { getShiftColor } from '../utils/scheduleCalculator';
 
 interface TodayHighlightProps {
   todayData: ScheduleDay | null;
@@ -11,19 +11,19 @@ interface TodayHighlightProps {
 
 const TodayHighlight: React.FC<TodayHighlightProps> = ({ todayData }) => {
   if (!todayData) return null;
-  
+
   const today = todayData.date;
   const shiftColorClass = getShiftColor(todayData.shift);
-  const morningShiftColorClass = getShiftColor(todayData.morningDisplay);
-  const afternoonShiftColorClass = getShiftColor(todayData.afternoonDisplay);
-  
+  const morningShiftColorClass = getShiftColor(todayData.morningDisplay as ShiftType);
+  const afternoonShiftColorClass = getShiftColor(todayData.afternoonDisplay as ShiftType);
+
   return (
-    <View className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl shadow-lg mx-4 mb-6 p-6 text-white">
+    <View className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl shadow-lg m-4 p-6 text-white">
       <View className="flex items-center gap-3 mb-4">
         {/* <Calendar className="w-6 h-6" /> */}
         <h3 className="text-lg font-bold">今日班次</h3>
       </View>
-      
+
       <View className="bg-white bg-opacity-20 rounded-xl p-4 backdrop-blur-sm">
         <View className="text-center">
           <View className="text-3xl font-bold mb-2">
@@ -32,7 +32,7 @@ const TodayHighlight: React.FC<TodayHighlightProps> = ({ todayData }) => {
           <View className="text-gray-200 mb-3">
             星期{getWeekdayName(today)}
           </View>
-          
+
           {todayData.isSplitDisplay ? (
             /* 分上下午显示 - 只有周六上午门诊下午休息的情况 */
             <View className="space-y-2">

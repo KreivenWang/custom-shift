@@ -17,13 +17,13 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ days }) => {
   const emptyDays = Array(firstDayWeekday).fill(null);
   
   return (
-    <View className="bg-white rounded-2xl shadow-lg p-4 mx-4 mb-6">
+    <View className="bg-white rounded-2xl shadow-lg p-4 mx-4">
       {/* 星期标题 */}
       <View className="grid grid-cols-7 gap-1 mb-3">
         {weekdays.map((day) => (
-          <View key={day} className="text-center text-sm font-medium text-gray-500 py-2">
+          <Text key={day} className="text-center text-sm font-medium text-gray-500 py-2">
             {day}
-          </View>
+          </Text>
         ))}
       </View>
       
@@ -31,7 +31,7 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ days }) => {
       <View className="grid grid-cols-7 gap-1">
         {/* 空白天数 */}
         {emptyDays.map((_, index) => (
-          <View key={`empty-${index}`} className="aspect-square"></View>
+          <View key={`empty-${index}`}></View>
         ))}
         
         {/* 实际天数 */}
@@ -43,7 +43,7 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ days }) => {
             <View
               key={day.date.toISOString()}
               className={`
-                aspect-square rounded-xl border-2 flex flex-col transition-all duration-200 hover:scale-105 cursor-pointer
+                rounded-xl border-2 flex flex-col transition-all duration-200 hover:scale-105 cursor-pointer
                 ${!day.isSplitDisplay ? shiftColorClass : 'bg-white border-gray-200'}
                 ${isToday ? 'ring-4 ring-gray-400 ring-opacity-50 shadow-lg' : ''}
               `}
@@ -51,7 +51,7 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({ days }) => {
               {/* 日期数字 - 固定高度 */}
               <View className={`text-center py-1 h-8 flex items-center justify-center ${isToday ? 'text-gray-800 font-bold' : 'text-gray-600'}`}>
                 <View className="flex flex-col items-center">
-                  <span className="text-sm font-bold">{day.date.getDate()}</span>
+                  <Text className="text-sm font-bold">{day.date.getDate()}</Text>
                   {isToday && <View className="w-1 h-1 bg-gray-600 rounded-full mt-0.5"></View>}
                 </View>
               </View>

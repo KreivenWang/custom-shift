@@ -61,25 +61,23 @@ export default function Index() {
   }
 
   return (
-      // <Header />
+    // <Header />
 
     <View className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <Header />
 
-      <View className="pb-6">
-        <MonthNavigation
-          year={calendarData.year}
-          month={calendarData.month}
-          onPrevMonth={handlePrevMonth}
-          onNextMonth={handleNextMonth}
-        />
+      <MonthNavigation
+        year={calendarData.year}
+        month={calendarData.month}
+        onPrevMonth={handlePrevMonth}
+        onNextMonth={handleNextMonth}
+      />
 
-        <CalendarGrid days={calendarData.days} />
+      <CalendarGrid days={calendarData.days} />
 
-        <TodayHighlight todayData={todayData} />
+      <TodayHighlight todayData={todayData} />
 
-        <ShiftLegend />
-      </View>
+      <ShiftLegend />
     </View>
     // <View>Hello</View>
   );
