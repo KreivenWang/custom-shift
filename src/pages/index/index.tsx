@@ -1,5 +1,5 @@
 import { View, Text } from '@tarojs/components'
-import { useLoad } from '@tarojs/taro'
+import { useLoad, useShareAppMessage } from '@tarojs/taro'
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import MonthNavigation from './components/MonthNavigation';
@@ -14,6 +14,14 @@ import './index.css'
 export default function Index() {
   useLoad(() => {
     console.log('Index Page loaded.')
+  })
+
+  useShareAppMessage(() => {
+    console.log('Index Page onShareAppMessage.')
+    return {
+      title: '冷罐头日程',
+      path: '/pages/index/index',
+    }
   })
 
   const [currentDate, setCurrentDate] = useState(new Date());
