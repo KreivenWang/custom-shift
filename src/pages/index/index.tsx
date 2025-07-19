@@ -19,7 +19,7 @@ export default function Index() {
   useShareAppMessage(() => {
     console.log('Index Page onShareAppMessage.')
     return {
-      title: '冷罐头日程',
+      title: '高桥取暖器作息表',
       path: '/pages/index/index',
     }
   })

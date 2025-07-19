@@ -7,7 +7,7 @@ const Header: React.FC = () => {
       <View className="max-w-md mx-auto">
         <View className="flex items-center justify-center gap-3 mb-2">
           <View className="w-6 h-6" >🗓️</View>
-          <View className="text-2xl font-bold">冷罐头日程</View>
+          <View className="text-2xl font-bold">高桥取暖器作息表</View>
           <View className="w-6 h-6 text-gray-300" >⭐</View>
         </View>
         <View className="text-center text-gray-200 text-sm font-medium">
